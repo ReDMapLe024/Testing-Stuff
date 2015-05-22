@@ -4,7 +4,7 @@ public abstract class Prototype[
       public static void main (String [] args){
         
         JFrame gameFrame = new JFrame("Prototype");
-        gameFrame.add(new protoPanel());
+        gameFrame.add(new ProtoPanel());
         gameFrame.setResizable(false);
         gameFrame.pack();
         gameFrame.setPositionRelativeTo(null);
