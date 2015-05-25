@@ -32,19 +32,25 @@ public class ProtoPanel extends JPanel implements Runnable, KeyListener(){
   }
   
   public void init(){
-    
+    running = true;
+    image = new BufferedImage(WIDTH, HEIGHT, 1);
+    g = (Graphics2D) image.getGraphics();
+    gsm = new GameStateManager();
   }
   
   public void update(){
+    gsm.update();
     
   }
   
   public void draw(){
-    
+    gsm.draw(g)
   }
   
   public void drawScreen(){
-    
+    Graphics gr = getGraphics();
+    gr.drawImage(image, 0, 0, WIDTH, HEIGHT, null);
+    gr.dispose();
   }
   
   
