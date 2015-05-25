@@ -10,7 +10,7 @@ public class ProtoPanel extends JPanel implements Runnable, KeyListener(){
   private BufferedImage image;
   private Graphics2D g;
   
-  private GameStateManager gsm;
+  private GameStateManager manager;
   
   public ProtoPanel(){
     setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -35,16 +35,15 @@ public class ProtoPanel extends JPanel implements Runnable, KeyListener(){
     running = true;
     image = new BufferedImage(WIDTH, HEIGHT, 1);
     g = (Graphics2D) image.getGraphics();
-    gsm = new GameStateManager();
+    manager = new GameStateManager();
   }
   
   public void update(){
-    gsm.update();
-    
+    manager.update();
   }
   
   public void draw(){
-    gsm.draw(g)
+    manager.draw(g)
   }
   
   public void drawScreen(){
